@@ -8,9 +8,11 @@ from pygments.lexers import diff
 from pygments.formatters import terminal
 
 
-
 def show_stat(commit):
-    rdiff = repo.diff(commit.parents[0], commit)
+    if commit.parents:
+        rdiff = repo.diff(commit.parents[0], commit)
+    else:
+        rdiff = commit.tree.diff_to_tree(swap=True)
     print(f"{rdiff.stats.files_changed} files changed:")
     for d in rdiff.deltas:
         print(d.new_file.path)
