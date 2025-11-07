@@ -3,12 +3,20 @@ import sys
 from datetime import datetime, timezone, timedelta
 
 import pygit2
+from pygments import highlight
+from pygments.lexers import diff
+from pygments.formatters import terminal
+
+
 
 def show_stat(commit):
-    diff = repo.diff(commit.parents[0], commit)
-    print(f"{diff.stats.files_changed} files changed:")
-    for d in diff.deltas:
+    rdiff = repo.diff(commit.parents[0], commit)
+    print(f"{rdiff.stats.files_changed} files changed:")
+    for d in rdiff.deltas:
         print(d.new_file.path)
+    print()
+    print(highlight(rdiff.patch, diff.DiffLexer(), terminal.TerminalFormatter()))
+
 
 def git_show(commit):
     tzinfo = timezone(timedelta(minutes=commit.author.offset))
