@@ -1,0 +1,11 @@
+[project]
+name = "gitbrowser"
+version = "0.1.0"
+description = "A simple web UI to browse git repositories"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "flask>=3.1.2",
+    "pygit2>=1.19.0",
+    "pygments>=2.19.2",
+]
