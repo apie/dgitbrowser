@@ -1,5 +1,5 @@
 [project]
-name = "gitbrowser"
+name = "dgitbrowser"
 version = "0.1.0"
 description = "A simple web UI to browse git repositories"
 readme = "README.md"

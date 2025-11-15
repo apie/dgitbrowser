@@ -1,7 +1,7 @@
 import pygit2
 
 # Local
-from gitbrowser.git_commands.show import git_show
+from dgitbrowser.git_commands.show import git_show
 
 import logging
 

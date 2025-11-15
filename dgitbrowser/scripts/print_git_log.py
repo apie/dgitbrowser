@@ -1,7 +1,7 @@
 import click
 
 # Local
-from gitbrowser.git_commands.log import git_log
+from dgitbrowser.git_commands.log import git_log
 
 import logging
 

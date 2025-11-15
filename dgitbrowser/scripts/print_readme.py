@@ -2,7 +2,7 @@ import sys
 from pathlib import Path
 
 # Local
-from gitbrowser.renderers.file import highlight_file
+from dgitbrowser.renderers.file import highlight_file
 
 import logging
 

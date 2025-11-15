@@ -3,7 +3,7 @@ import sys
 import logging
 
 # Local
-from gitbrowser.renderers.file import highlight_file
+from dgitbrowser.renderers.file import highlight_file
 
 logger = logging.getLogger(__name__)
 

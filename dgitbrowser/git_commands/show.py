@@ -3,7 +3,7 @@ from datetime import datetime, timezone, timedelta
 
 
 # Local
-from gitbrowser.renderers.patch import highlight_patch
+from dgitbrowser.renderers.patch import highlight_patch
 
 import logging
 
