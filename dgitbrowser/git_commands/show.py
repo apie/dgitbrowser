@@ -25,18 +25,18 @@ def show_stat(repo, commit):
     for d in rdiff.deltas:
         print(d.new_file.path)
     print()
-    # print(highlight_patch(rdiff.patch))
+    print(highlight_patch(rdiff.patch))
 
 
-def git_show(repo, commit, with_stat=False, path: str = ""):
+def git_show(repo, commit, with_stat=False, path: str = "") -> bool:
     path = os.path.abspath(path)
     if path == os.path.abspath(repo.path + ".."):
         # Requested path is the repo path, so do not pass it.
         path = ""
     # If specific path provided, dont show commits without that path.
-    if path and path not in [d.new_file.path for d in get_rdiff(repo, commit).deltas]:
-        print('aha het zijn relatieve paths uiteraard, dus moet ze nog relatief aan elkaar maken')
-        # FIXME
+    if path and path not in [
+        os.path.abspath(d.new_file.path) for d in get_rdiff(repo, commit).deltas
+    ]:
         return
     tzinfo = timezone(timedelta(minutes=commit.author.offset))
     dt = datetime.fromtimestamp(float(commit.author.time), tzinfo)
@@ -54,3 +54,4 @@ def git_show(repo, commit, with_stat=False, path: str = ""):
     if with_stat:
         show_stat(repo, commit)
     print()
+    return True

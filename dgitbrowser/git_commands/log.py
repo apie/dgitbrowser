@@ -15,7 +15,7 @@ def git_log(path: str, number_of_commits: int, with_stat: bool = False):
     last = repo[repo.head.target]
     for commit in repo.walk(last.id, pygit2.enums.SortMode.TIME):
         # print(commit.short_id, ':', commit.message.strip())
-        git_show(repo, commit, with_stat, path)
-        number_of_commits -= 1
+        if git_show(repo, commit, with_stat, path):
+            number_of_commits -= 1
         if number_of_commits <= 0:
             break
