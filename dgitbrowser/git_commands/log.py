@@ -19,3 +19,8 @@ def git_log(path: str, number_of_commits: int, with_stat: bool = False):
             number_of_commits -= 1
         if number_of_commits <= 0:
             break
+
+
+def get_repo_log(path: str):
+    # TODO
+    return ["wip", "wap"]

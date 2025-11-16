@@ -1,0 +1,10 @@
+<p>
+    <h2>Latest commits</h2>
+    <ul>
+    {% for commit in commits %}
+        <li>{{ commit }}</li>
+    {% else %}
+        <li>The repo is pristine!</li>
+    {% endfor %}
+    </ul>
+</p>

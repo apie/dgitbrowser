@@ -108,3 +108,13 @@ input[type=submit] {
   align-self: start;
   min-width: 10em;
 }
+
+footer {
+  padding-left: 0.3em;
+  padding-bottom: 0.3em;
+}
+
+.highlight {
+  padding: 0.5rem;
+  border-radius: 1rem;
+}

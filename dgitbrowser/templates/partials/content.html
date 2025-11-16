@@ -1,0 +1,10 @@
+<p>
+    <h2>Repo content</h2>
+    <ul>
+    {% for file in files %}
+        <li>{{ file }}</li>
+    {% else %}
+        <li>The repo is empty!</li>
+    {% endfor %}
+    </ul>
+</p>

@@ -3,6 +3,7 @@
 <head>
     <title>DGitbrowser{% if title %} - {{ title }}{% endif %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='highlight.css') }}">
 </head>
@@ -24,7 +25,7 @@
     <hr>
     <footer>
         <small>
-            Rendered by <em>DGitbrowser</em>, a simple git repo browser. <a href="https://github.com/apie/dgitbrowser">Get the source.</a>
+            Rendered by <em>DGitbrowser</em>, a simple git repo browser. <a href="/readme">View readme</a> - <a href="https://github.com/apie/dgitbrowser">Get the source.</a>
         </small>
     </footer>
 </body>
