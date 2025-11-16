@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>DGitbrowser{% if title %} - {{ title }}{% endif %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='highlight.css') }}">
+</head>
+<body>
+    <nav>
+        <h1>DGitbrowser{% if title %} - {{ title }}{% endif %}</h1>
+    </nav>
+    <section class="content">
+        <header>
+            {% block header %}{% endblock %}
+        </header>
+        {% for message in get_flashed_messages() %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
+        {% block content %}
+            {{ content|safe }}
+        {% endblock %}
+    </section>
+    <hr>
+    <footer>
+        <small>
+            Rendered by <em>DGitbrowser</em>, a simple git repo browser. <a href="https://github.com/apie/dgitbrowser">Get the source.</a>
+        </small>
+    </footer>
+</body>
+</html>
